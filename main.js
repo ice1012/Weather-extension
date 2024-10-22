@@ -19,8 +19,10 @@ function fetchWeather(city) {
                 if (data.cod === 200) {
                     const weatherInfo = `
                         <h3>${data.name}</h3>
-                        <p>${data.main.temp}°C</p>
+                        <p>Temperature: ${data.main.temp}°C</p>
+                        <p>Feels like: ${data.main.feels_like}°C</p>
                         <p>Weather condition: ${data.weather[0].description}</p>
+                        <p>Wind speed: ${data.wind.speed}m/s</p>
                     `;
                     document.getElementById('weather-result').innerHTML = weatherInfo;
                 } else {
